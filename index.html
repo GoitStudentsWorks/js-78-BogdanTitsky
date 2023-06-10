@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/js-78-BogdanTitsky/assets/logo-3fdb2e55.svg" />
+    <meta name="description" content="Cinemania, watch all new films free" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cinemania</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    
+    <script type="module" crossorigin src="/js-78-BogdanTitsky/assets/index-528dbae9.js"></script>
+    <link rel="modulepreload" crossorigin href="/js-78-BogdanTitsky/assets/footer-e6b0f4f3.js">
+    <link rel="stylesheet" href="/js-78-BogdanTitsky/assets/footer-3447ceaa.css">
+  </head>
+  <body>
+    <header class="header">
+  <div class="container">
+    <a href="./index.html" class="logo-link">
+      <svg class="logo-svg">
+        <use href="/js-78-BogdanTitsky/assets/sprite-header-008a3287.svg#icon-header-logo"></use>
+      </svg>
+      <h1 class="logo-title">Cinemania</h1>
+    </a>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="./index.html" class="nav-link link-current">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="./catalog-page.html" class="nav-link">Catalog</a>
+        </li>
+        <li class="nav-item">
+          <a href="./library-page.html" class="nav-link">My Library</a>
+        </li>
+      </ul>
+    </nav>
+    <button
+      class="menu-button"
+      data-menu-button
+      aria-label="Перемикач мобільного меню"
+      aria-expanded="false"
+      aria-controls="menu-container"
+    >
+      menu
+    </button>
+
+    <div class="menu-container" id="menu-container" data-menu>
+      <a href="./index.html" class="logo-link">
+        <svg class="logo-svg">
+          <use href="/js-78-BogdanTitsky/assets/sprite-header-008a3287.svg#icon-header-logo"></use>
+        </svg>
+      </a>
+      <ul class="menu-list">
+        <li class="menu-item">
+          <a href="./index.html" class="nav-link--mobile link-current">Home</a>
+        </li>
+        <li class="menu-item">
+          <a href="./catalog-page.html" class="nav-link--mobile">Catalog</a>
+        </li>
+        <li class="menu-item">
+          <a href="./library-page.html" class="nav-link--mobile">My Library</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="page-overlay"></div>
+
+    <div class="theme-switch">
+      <img
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAASCAYAAAAg9DzcAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAQeSURBVHgBbVZNbpxFEK03HluxhBTfIGMBEruYEzjDCXwCEq7AAgmxYYPEjiOgnICQDQsQE7hAhhuMF/zsCCuEZ7qL6vrprh7nk+z+pr/+efXq1esGveXhX9+7pgWeUcU1MV3KH1GVf0zMhTB+g8DyVOmrbWLrby2zzEWM4dZav7XyB0pr9Xm67pYZ25O7+gKf7r4/xoYJ6OaDFZ2Ub+X1um/YF7KN0Xb1vgGeBiAJSt7BDZS/01uDklDacO3378drFdrtC63PP9/t7gHmzftX0mxk0sM2GRNbrZWuOhhyQMEKJyAJAHpmBnD0tZWAljXbrwdl/W1NJe1v6f7o7IvdtgPmH4TZ0/I6wE6R2oaU+9iiV8A8p9PfYbu2LNn3iekBjoNlCpI6EQ68zQfjzf4/+vD8691uqfQu6ob2/JA5dJdBjHeL3HVbZH1O6atwthQ0lAtnGtWyo+wUHe5ygxKZ9zDQmlWZp9y0uRcCtEl1jcPLd28Wi8V3vSB6wThgBSeTSVlyJryP9SuN8TxY5SOtewGmfkg/pYJWMriwabRkwlRyOJS6XqIsbqhw3ywAmX5GqlpA7IXIPWWm06RtQ1s95QFusA/TuKlqLmqXgIPz4FQi1OZJe0r4WADz4znl2sIilhnF08bUWQx2k2QiyMYQMDME12IvugDQC7aGTFQS7jAGFlWTqAHI65Ml7/nKfVE+kkcUjJqL+ULOkFR5vW9TzhgoVXtb0/SI5Bw81YMFhr6PsezSYct4L/7KqyUOPX0DbNJjZ50nO3M2FERncnhwgIIWzgh+trMWoDFbpwLXdVt/qdqi6PZtLVqKO9zK5EcRWWsXbYpLAd4XTqCbFzupao7eNGeBeHWjVtcqukV5tuLAsHlhhT5GpkELMHzZXUWW/23Jd/WV+NrTxKaG52L3jUCm2+OCG8YfY+23ybi1reqVxuoaZ4oDiCnsjcdeapv+TQM3GQZZ22Xd03NZ8FlKVz6hjB3d0H3STzVOPunVzujS4LAzz0wbZzqmFDBCy1EDHBompZd6nbibEL9QJg7fXG5E/E/yicUcd4FhZwa4g4yjs59OXKdTz8yfY/w4JY1BYJJJIoLqmNPrh3n34OUfl3rSnRB/ctjTa/l4EVJQ5/RLDHV/BPLmwR4q+YkFSjcyDABWM+HX7vV0RBDcv7Wo0Q8MtfY3fHa27neJ9tx9tbrCgTcy6WKccjQdm/nU4ZyqbnvzdTE0GUDDGvNFJ2lZZYMgpnomCP/sK63f+fH37QS4Pf9+uVqd3vFGBj+i0Jw5DqibOI4ZtjtDY2W6+94L1ElAzxj7MY6h3cxqc4VfHtT6FD//eRsYJ8DxHD5b3dRSb8TSHstCV3nTSZMlZBIMYroyRjESJRllBg38OOkM+K1838iF7Pn5T3+9Osb2Py7AB4j56iSHAAAAAElFTkSuQmCC"
+        alt="тема задній фон"
+        class="theme-icon"
+      />
+
+      <div>
+        <svg class="icon-moon">
+          <use
+            href="/js-78-BogdanTitsky/assets/sprite-header-008a3287.svg#icon-header-theme-svitch-moon"
+          ></use>
+        </svg>
+        <svg class="icon-switch">
+          <use href="/js-78-BogdanTitsky/assets/sprite-header-008a3287.svg#icon-header-theme-svitch-el"></use>
+        </svg>
+        <svg class="icon-sun">
+          <use
+            href="/js-78-BogdanTitsky/assets/sprite-header-008a3287.svg#icon-header-theme-svitch-sun"
+          ></use>
+        </svg>
+      </div>
+    </div>
+  </div>
+</header>
+
+    <section class="hero">
+  <div class="container hero-container">
+    <div class="hero-content">
+      <h1 class="hero-title">Let’s Make Your Own Cinema</h1>
+      <p class="hero-text">
+        Is a guide to creating a personalized movie theater experience. You'll
+        need a projector, screen, and speakers. Decorate your space, choose your
+        films, and stock up on snacks for the full experience.
+      </p>
+      <button type="button" class="button default-button">Get Started</button>
+    </div>
+  </div>
+</section>
+<div class="overlay">
+  <div class="trailer-modal">
+    <div class="trailer-modal-closeSvg">
+      <svg class="trailer-modal-svg">
+        <use href="/js-78-BogdanTitsky/assets/symbol-defs-75761cb7.svg#icon-close-hero-modal"></use>
+      </svg>
+    </div>
+  </div>
+</div>
+<div class="overlay">
+  <div class="hero-PopUp">
+    <div class="hero-PopUp-closeSvg">
+      <svg class="hero-PopUp-svg">
+        <use href="/js-78-BogdanTitsky/assets/symbol-defs-75761cb7.svg#icon-close-hero-modal"></use>
+      </svg>
+    </div>
+    <p class="hero-PopUp-text">
+      OOPS...<br />We are very sorry!<br />
+      But we couldn’t find the trailer.
+    </p>
+  </div>
+</div>
+<a class="scroll-up-button"></a>
+    <section class="modal-section container">
+
+  <div id="modal-backdrop" class="modal-backdrop ">
+
+
+  </div>
+
+</section>
+    <section class="weelky-trends-section">
+  <div class="container">
+    <div class="wrapper">
+      <h2 class="section-title-weekly-trends">WEEKLY TRENDS</h2>
+      <a class="see-all-link" href="./catalog-page.html">See all</a>
+    </div>
+    <ul class="weelky-trends-list">
+      <!-- card template -->
+    </ul>
+  </div>
+</section>
+
+    <section class="upcoming container">
+  <div class="js-upcoming">
+
+
+  </div>
+  <button type="button" class="upcoming__btn" id="upcoming-btn">
+    Add to my library
+  </button>
+
+
+</section>
+    <footer class="footer">
+  <div class="container">
+    <ul class="footer-list list">
+      <li class="footer-item">© 2023 | All Rights Reserved |</li>
+
+      <li class="footer-item">
+        Developed with<svg width="14" height="13" class="footer-list-icon">
+          <use href="/js-78-BogdanTitsky/assets/symbol-defs-75761cb7.svg#icon-favorite"></use>
+        </svg>
+        by
+        <button type="button" id="open-modal-btn" class="footer-btn">
+          GoIT Students
+        </button>
+      </li>
+    </ul>
+  </div>
+</footer>
+<!--------------- project participants ------------------------------------>
+<div class="team-modal" id="footer-modal">
+  <button type="button" id="close-modal-btn" class="team-modal__btn--close">
+    <svg width="32" height="32" class="team-modal-svg">
+      <use href="/js-78-BogdanTitsky/assets/symbol-defs-75761cb7.svg#icon-close-black"></use>
+    </svg>
+  </button>
+
+  <div class="modal__box">
+    <ul class="team-modal-list list">
+      <li class="team-modal__item">
+        <img
+          src=""
+          alt="Photo "
+          width="120"
+          height="120"
+          class="team-modal__img bogdan"
+        />
+        <div class="team-modal__text-wrap">
+          <p>
+            <span class="team-modal__span--orange">Bogdan Titsky</span>Team
+            Lead, Developer
+          </p>
+        </div>
+      </li>
+
+      <li class="team-modal__item">
+        <img
+          src=""
+          alt="Photo "
+          width="120"
+          height="120"
+          class="team-modal__img lyuda"
+        />
+        <div class="team-modal__text-wrap">
+          <p>
+            <span class="team-modal__span--orange">Ludmila Kurochkina</span
+            >Scrum Master, Developer
+          </p>
+        </div>
+      </li>
+
+      <li class="team-modal__item">
+        <img
+          src=""
+          alt="Photo "
+          width="120"
+          height="120"
+          class="team-modal__img diana"
+        />
+        <div class="team-modal__text-wrap">
+          <p>
+            <span class="team-modal__span--orange">Diana Smilian</span>Developer
+          </p>
+        </div>
+      </li>
+
+      <li class="team-modal__item">
+        <img
+          src=""
+          alt="Photo "
+          width="120"
+          height="120"
+          class="team-modal__img andriy"
+        />
+        <div class="team-modal__text-wrap">
+          <p>
+            <span class="team-modal__span--orange">Andriy Fartushny</span
+            >Developer
+          </p>
+        </div>
+      </li>
+
+      <li class="team-modal__item">
+        <img
+          src=""
+          alt="Photo "
+          width="120"
+          height="120"
+          class="team-modal__img alla"
+        />
+        <div class="team-modal__text-wrap">
+          <p>
+            <span class="team-modal__span--orange">Alla Pogrebnyak</span
+            >Developer
+          </p>
+        </div>
+      </li>
+
+      <li class="team-modal__item">
+        <img
+          src=""
+          alt="Photo "
+          width="120"
+          height="120"
+          class="team-modal__img dasha"
+        />
+        <div class="team-modal__text-wrap">
+          <p>
+            <span class="team-modal__span--orange">Daria Avvakumova</span
+            >Developer
+          </p>
+        </div>
+      </li>
+
+      <li class="team-modal__item">
+        <img
+          src=""
+          alt="Photo "
+          width="120"
+          height="120"
+          class="team-modal__img yura"
+        />
+        <div class="team-modal__text-wrap">
+          <p>
+            <span class="team-modal__span--orange">Yura Platonov</span>Developer
+          </p>
+        </div>
+      </li>
+
+      <li class="team-modal__item">
+        <img
+          src=""
+          alt="Photo "
+          width="120"
+          height="120"
+          class="team-modal__img marat"
+        />
+        <div class="team-modal__text-wrap">
+          <p>
+            <span class="team-modal__span--orange">Marat Hakimov</span>Developer
+          </p>
+        </div>
+      </li>
+
+      <li class="team-modal__item">
+        <img
+          src=""
+          alt="Photo "
+          width="120"
+          height="120"
+          class="team-modal__img anna"
+        />
+        <div class="team-modal__text-wrap">
+          <p>
+            <span class="team-modal__span--orange">Anna Fedoruk</span>Developer
+          </p>
+        </div>
+      </li>
+
+      <li class="team-modal__item">
+        <img
+          src=""
+          alt="Photo "
+          width="120"
+          height="120"
+          class="team-modal__img anton"
+        />
+        <div class="team-modal__text-wrap">
+          <p>
+            <span class="team-modal__span--orange">Anton Khodorkov</span
+            >Developer
+          </p>
+        </div>
+      </li>
+
+      <li class="team-modal__item">
+        <img
+          src=""
+          alt="Photo "
+          width="120"
+          height="120"
+          class="nikita team-modal__img"
+        />
+        <div class="team-modal__text-wrap">
+          <p>
+            <span class="team-modal__span--orange">Nikita Postnov</span
+            >Developer
+          </p>
+        </div>
+      </li>
+
+      <li class="team-modal__item">
+        <img
+          src=""
+          alt="Photo "
+          width="120"
+          height="120"
+          class="team-modal__img sorokin"
+        />
+        <div class="team-modal__text-wrap">
+          <p>
+            <span class="team-modal__span--orange">Oleksandr Sorokin</span
+            >Developer
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+    
+  </body>
+</html>
